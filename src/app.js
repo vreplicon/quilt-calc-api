@@ -3,6 +3,7 @@ const express = require('express')
 const morgan = require('morgan')
 const cors = require('cors')
 const helmet = require('helmet')
+const quiltsRouter = require('./quilts-router')
 const {
     NODE_ENV
 } = require('./config')
@@ -20,6 +21,8 @@ app.use(cors())
 app.get('/', (req,res) => {
     res.send('Hello, world!')
 })
+
+app.use('/api/quilts', quiltsRouter)
 
 app.use(function errorHandler(error, req, res, next) {
     let response
