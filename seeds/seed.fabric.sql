@@ -1,8 +1,9 @@
-TRUNCATE fabric RESTART IDENTITY CASCADE;
+TRUNCATE fabric RESTART
+IDENTITY CASCADE;
 
 
 INSERT INTO fabric
   (quilt_id, fabric_name, amount)
-  VALUES
-    (1, 'Main color', 157),
-    (1, 'Secondary color', 157);
+VALUES
+  (1, 'Main color', 157),
+  (1, 'Secondary color', 157);
