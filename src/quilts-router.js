@@ -21,13 +21,4 @@ quiltsRouter.route("/").get((req, res, next) => {
     .catch(next);
 });
 
-quiltsRouter.route("/thing").get((req, res, next) => {
-  const knexInstance = req.app.get("db");
-  FabricService.test(knexInstance)
-    .then(lookups => {
-      res.json(lookups);
-    })
-    .catch(next);
-});
-
 module.exports = quiltsRouter;
