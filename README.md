@@ -1,55 +1,21 @@
 # Gear Closet API
 
 ## Summary
-Simplify planning your next adventure by using Gear Closet. With this app you can store the information 
-for all of your gear in one place and easily put together a list of all of the things you want to bring
-on your next big trip.
+This app allows you to get real-time calculations of needed fabric for different quilt patterns. The user can choose from different classic quilt patterns and then change parameters such as length, width, and border sizes.
 
 ## Live Demo
 
-https://gear-closet.vreplicon.now.sh/
+https://quilt-calc.vreplicon.now.sh/
 
 ## Front End Repo
 
-https://github.com/vreplicon/gear-closet
+https://github.com/vreplicon/quilt-calc
 
 ## API Endpoints
 
-### /api/users/sign-up
+### /api/quilts
 
-A POST request to this endpoint will create a new user and return the credentials for that user
-
-### /api/users/sign-in
-
-A POST request to this endpoint will get the user id for the given email
-
-### /api/gear
-
-This endpoint handles the gear database
-
-Use a POST request to add a new piece of gear with the new gear in the body of the request
-
-#### /api/gear/gearId
-
-Use a DELETE request to remove a piece of gear with the specified id from the database
-
-#### /api/gear/user/userId
-
-Use a GET request to get all of the pieces of gear belonging to the user with the given user id
-
-### /api/lists
-
-This endpoint handles the list database
-
-Use a POST request to add a new list with the new list in the body of the request
-
-#### /api/lists/listId
-
-Use a DELETE request to remove a list with the specified id from the database
-
-#### /api/lists/user/userId
-
-Use a GET request to get all of lists belonging to the user with the given user id
+A GET request to this endpoint will return all of the quilt patterns in the database
 
 ## Technologies Used
 
