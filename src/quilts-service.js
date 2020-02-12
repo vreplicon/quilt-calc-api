@@ -1,15 +1,25 @@
 const QuiltsService = {
-  getAllQuilts(knex) {
-    return knex.select("*").from("quilts");
+  getAllStandardQuilts(knex) {
+    return knex.select("*").from("quilts").where("standard_pattern", 'TRUE');
   },
 
-  getById(knex, id) {
+  getByLookupId(knex, id) {
     return knex
       .from("quilts")
       .select("*")
-      .where("id", id)
+      .where("lookup_id", id)
       .first();
   },
+
+    addNewQuilt(knex, newQuilt) {
+        return knex
+            .insert(newQuilt)
+            .into('quilts')
+            .returning('*')
+            .then(rows => {
+                return rows[0]
+            })
+    },
 
   groupFabric(quilt, fabric) {
     let newQuilt = {

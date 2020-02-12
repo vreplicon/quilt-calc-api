@@ -3,7 +3,10 @@ CREATE TABLE quilts (
   quilt_name TEXT NOT NULL,
   width INTEGER,
   height INTEGER,
-  blockWidth INTEGER NOT NULL,
-  blockHeight INTEGER NOT NULL,
-  class_name TEXT NOT NULL
+  border FLOAT,
+  block_width INTEGER NOT NULL,
+  block_height INTEGER NOT NULL,
+  class_name TEXT NOT NULL,
+  standard_pattern BOOLEAN NOT NULL,
+  lookup_id TEXT
 );

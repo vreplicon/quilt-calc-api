@@ -1,4 +1,4 @@
-# Gear Closet API
+# Quilt Calc API
 
 ## Summary
 This app allows you to get real-time calculations of needed fabric for different quilt patterns. The user can choose from different classic quilt patterns and then change parameters such as length, width, and border sizes.
