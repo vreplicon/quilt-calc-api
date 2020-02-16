@@ -18,21 +18,20 @@ const FabricService = {
       .where("quilt_id", quilt_id);
   },
 
-	addNewFabric(knex, fabric, quilt) {
-		const fieldsToInsert = fabric.map(f =>
-			({
-				fabric_name : f.fabric_name,
-        amount : f.amount,
-				quilt_id: quilt.id
-			}));
-		return knex
-			.insert(fieldsToInsert)
-			.into('fabric')
-			.returning('*')
-			.then(rows => {
-				return rows[0]
-			})
-	},
+  addNewFabric(knex, fabric, quilt) {
+    const fieldsToInsert = fabric.map(f => ({
+      fabric_name: f.fabric_name,
+      amount: f.amount,
+      quilt_id: quilt.id
+    }));
+    return knex
+      .insert(fieldsToInsert)
+      .into("fabric")
+      .returning("*")
+      .then(rows => {
+        return rows[0];
+      });
+  }
 };
 
 module.exports = FabricService;

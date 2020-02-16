@@ -22,21 +22,16 @@ describe("Quilt Endpoints", function() {
     db.raw("TRUNCATE quilts RESTART IDENTITY CASCADE")
   );
 
-
   describe(`GET /api/quilts/:lookup_id`, () => {
     context(`Given id does not exist`, () => {
-      it(`responds with 404`, () => {
+      it(`responds with 404`, () => {});
+    });
 
-      })
-    })
-
-    context('Given id does exist', () => {
-			it(`Returns quilt`, () => {
-
-			})
-		})
-    })
-      describe(`GET /api/quilts`, () => {
+    context("Given id does exist", () => {
+      it(`Returns quilt`, () => {});
+    });
+  });
+  describe(`GET /api/quilts`, () => {
     context(`Given there are no quilts`, () => {
       it(`responds with 200 and an empty list`, () => {
         return supertest(app)
@@ -59,41 +54,35 @@ describe("Quilt Endpoints", function() {
   });
 
   describe(`POST /api/quilts`, () => {
-		const testQuilts = makeQuiltsArray();
+    const testQuilts = makeQuiltsArray();
 
     it(`creates a quilt, responding with 201 and the new quilt`, () => {
       const newQuilt = {
-      quilt_name: "Stripes",
-      width: 3,
-      height: 6,
-      border: 0,
-      block_width: 24,
-      block_height: 12,
-      class_name: "striped-block",
-      standard_pattern: false,
-      lookup_id: 1
-      }
+        quilt_name: "Stripes",
+        width: 3,
+        height: 6,
+        border: 0,
+        block_width: 24,
+        block_height: 12,
+        class_name: "striped-block",
+        standard_pattern: false,
+        lookup_id: 1
+      };
       return supertest(app)
-        .post('/api/gear')
+        .post("/api/gear")
         .send(newQuilt)
         .expect(201)
         .expect(res => {
-          expect(res.body.quilt_name).to.eql(newGear.quilt_name)
-          expect(res.body.width).to.eql(newGear.width)
-		  expect(res.body.border).to.eql(newGear.border)
-		  expect(res.body.block_width).to.eql(newGear.block_width)
-		  expect(res.body.block_height).to.eql(newGear.block_height)
-		  expect(res.body.class_name).to.eql(newGear.class_name)
-      expect(res.body.standard_pattern).to.eql(newGear.standard_pattern)
-      expect(res.body.lookup_id).to.eql(newGear.lookup_id)
-          expect(res.body).to.have.property('id')
-        })
-    })
-
-  
-    })
-})
-
-
-
-
+          expect(res.body.quilt_name).to.eql(newGear.quilt_name);
+          expect(res.body.width).to.eql(newGear.width);
+          expect(res.body.border).to.eql(newGear.border);
+          expect(res.body.block_width).to.eql(newGear.block_width);
+          expect(res.body.block_height).to.eql(newGear.block_height);
+          expect(res.body.class_name).to.eql(newGear.class_name);
+          expect(res.body.standard_pattern).to.eql(newGear.standard_pattern);
+          expect(res.body.lookup_id).to.eql(newGear.lookup_id);
+          expect(res.body).to.have.property("id");
+        });
+    });
+  });
+});
