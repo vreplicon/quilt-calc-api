@@ -15,7 +15,12 @@ https://github.com/vreplicon/quilt-calc
 
 ### /api/quilts
 
-A GET request to this endpoint will return all of the quilt patterns in the database
+A GET request to this endpoint will return all of the standard quilt patterns in the database
+Use a POST request to add a new quilt to the database
+
+### /api/quilts/lookup_id
+
+Use a GET request to recieve the first quilt in the database with the given lookup_id
 
 ## Technologies Used
 
